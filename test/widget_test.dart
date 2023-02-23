@@ -8,23 +8,46 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:liberate/app.dart';
+import 'package:liberate/services/data_validator.dart';
 
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const App());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  group("Test de las funciones de datavalidator", () => {
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+      test('Validación de correo correcto', () {
+        String email = "vargas@fundacionliberate.org.co";
+        String password = "12345678";
+        try{
+          DataValidator.validateEmailPassword(email, password);
+          expect(true, true);
+        }catch(e){
+          fail("Fallo prueba, error: $e");
+        }
+      }),
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+      test('Validación de correo inválido', () {
+        String email = "vargas@gmail.com";
+        String password = "12345678";
+        try{
+          DataValidator.validateEmailPassword(email, password);
+          fail("Fallo prueba");
+        }catch(e){
+          expect(true, true);
+        }
+      }),
+
+      test('Validación de contraseña inválida', () {
+        String email = "vargas@fundacionliberate.org.co";
+        String password = "1234567";
+        try{
+          DataValidator.validateEmailPassword(email, password);
+          fail("Fallo prueba");
+        }catch(e){
+          expect(true, true);
+        }
+      })
+
+
   });
 }

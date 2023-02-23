@@ -1,5 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:liberate/controller/signup_controller.dart';
+import 'package:liberate/provider/currentUser_provider.dart';
 import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
 import '../../../constant/strings.dart';
@@ -25,6 +27,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final controllerRepeatPassword = TextEditingController();
   final controllerEmail = TextEditingController();
   final controllerName = TextEditingController();
+  final SignUpController signUpController= SignUpController();
   bool loading=false;
 
   @override
@@ -39,7 +42,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final authService= Provider.of<AuthService>(context);
+    final currentUser= Provider.of<CurrentUserProvider>(context);
     final permissionService= Provider.of<PermissionService>(context);
     var screenSize = MediaQuery.of(context).size;
 
@@ -115,7 +118,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                  try{
                                    setState(() {loading=true;});
                                    if(Platform.isIOS) await permissionService.requestTrackingPermission();
-                                   await authService.login(controllerEmail.text,controllerPassword.text);
+                                   currentUser.setCurrentUser(await signUpController.createUser(controllerEmail.text, controllerName.text, controllerPassword.text, controllerRepeatPassword.text));
                                    setState(() {loading=false;});
                                    if (!mounted) return;
                                    Navigator.pop(context);
