@@ -21,6 +21,12 @@ static String profileTitle= "Perfil";
 static String signOutTitle= "Cerrar sesión";
 
 
+static String informesTitle= "Informes";
+static String boletinesTitle= "Boletines";
+static String revistasTitle= "Revistas";
+static String capacitacionesTitle= "Capacitaciones";
+
+
 
 
 }

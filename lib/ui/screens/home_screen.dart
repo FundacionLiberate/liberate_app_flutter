@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../constant/assetImages.dart';
 import '../../constant/strings.dart';
 import '../../provider/currentUser_provider.dart';
 import '../generic_widgets/home_option.dart';
@@ -35,10 +36,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,childAspectRatio: 0.8, crossAxisSpacing: 20, mainAxisSpacing: 20),
                   children: [
-                    HomeOption(),
-                    HomeOption(),
-                    HomeOption(),
-                    HomeOption(),
+                    HomeOption(title: Strings.informesTitle, imagePath: AssetImages.informeIconPath),
+                    HomeOption(title: Strings.boletinesTitle, imagePath:AssetImages.boletinIconPath),
+                    HomeOption(title: Strings.revistasTitle, imagePath:AssetImages.magazineIconPath),
+                    HomeOption(title: Strings.capacitacionesTitle, imagePath:AssetImages.capacitacionesIconPath ),
                   ],
                 ),
               ),
