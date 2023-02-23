@@ -18,6 +18,7 @@ static String homeTitle= "Inicio";
 
 static String profileTitle= "Perfil";
 
+static String signOutTitle= "Cerrar sesión";
 
 
 

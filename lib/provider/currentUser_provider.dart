@@ -10,5 +10,10 @@ class CurrentUserProvider extends ChangeNotifier{
     notifyListeners();
   }
 
+  clearCurrentUser(){
+    currentUser=LiberateUser();
+    notifyListeners();
+  }
+
 
 }
