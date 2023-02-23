@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:liberate/ui/screens/welcome_screen.dart';
 import '../ui/screens/logIn_screen.dart';
 import '../ui/screens/sign_up_screen.dart';
-import '../ui/screens/srtart_screen.dart';
+import '../ui/screens/start_screen.dart';
 
 
 

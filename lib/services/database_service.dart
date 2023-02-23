@@ -15,5 +15,10 @@ class DatabaseService{
   }
 
 
+   Stream<DocumentSnapshot<Map<String, dynamic>>> currentUser(String userId){
+     return users.doc(userId).snapshots();
+   }
+
+
 
 }

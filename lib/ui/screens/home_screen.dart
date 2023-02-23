@@ -18,13 +18,32 @@ class _HomeScreenState extends State<HomeScreen> {
     final currentUser= Provider.of<CurrentUserProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Align(
-          alignment: Alignment.centerLeft,
-          child: Text(Strings.homeTitle, style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
-        ),
+        title: SizedBox(
+          height: 200,
+          width: double.infinity,
+          child: Row(
+            children: [
+              Expanded(
+                flex: 1,
+                child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(Strings.homeTitle, style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold))
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Image.asset(AssetImages.logoPath),
+              ),
+              Expanded(
+                flex: 1,
+                child: Container(),
+              )
+            ],
+          ),
+        )
       ),
       body:Padding(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(15),
         child: Column(
           children: [
             Expanded(

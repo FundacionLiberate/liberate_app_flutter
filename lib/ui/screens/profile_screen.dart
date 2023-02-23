@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:liberate/constant/assetImages.dart';
 import 'package:provider/provider.dart';
 
 import '../../constant/strings.dart';
@@ -18,29 +19,84 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final authService= Provider.of<AuthService>(context);
     final currentUser= Provider.of<CurrentUserProvider>(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Align(
-          alignment: Alignment.centerLeft,
-          child: Text(Strings.profileTitle, style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight),
+        child: AppBar(
+          title: SizedBox(
+            height: 200,
+            width: double.infinity,
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(Strings.profileTitle, style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold))
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Image.asset(AssetImages.logoPath),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(),
+                )
+              ],
+            ),
+          )
         ),
-        actions: [
-         Padding(
-           padding: const EdgeInsets.only(
-             right: 20
-           ),
-           child: Align(
-               alignment: Alignment.center,
-               child:  InkWell(
-                 onTap: (){
-                   authService.signOut();
-                   currentUser.clearCurrentUser();
-                 },
-                 child: Text(Strings.signOutTitle, style: const TextStyle(color: Colors.red, ),),
-               )
-           ),
-         )
-        ],
       ),
+      body: Padding(
+        padding: const EdgeInsets.all(15),
+        child: Consumer<CurrentUserProvider>(
+            builder: (context, data, child) {
+              return  Column(
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(Strings.nameTitle, style: const TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 22),textAlign: TextAlign.start,),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(data.currentUser!.name, style: const TextStyle(color: Colors.grey),textAlign: TextAlign.start),
+                  ),
+
+                  const Divider(),
+
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(Strings.emailTitle, style: const TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 22)),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(data.currentUser!.email, style: const TextStyle(color: Colors.grey,)),
+                  ),
+
+                  const Divider(),
+
+                  Align(
+                      alignment: Alignment.centerLeft,
+                      child:  InkWell(
+                        onTap: (){
+                          authService.signOut();
+                          currentUser.clearCurrentUser();
+                        },
+                        child: Text(Strings.signOutTitle, style: const TextStyle(color: Colors.red,fontSize: 20),),
+                      )
+                  ),
+
+
+                ],
+              );
+            }
+        ),
+      )
     );
   }
 }
+
+/*
+*
+*
+* */

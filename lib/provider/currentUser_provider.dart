@@ -10,6 +10,11 @@ class CurrentUserProvider extends ChangeNotifier{
     notifyListeners();
   }
 
+  setCurrentUserFromJSON(Map<String, dynamic> json){
+    currentUser= LiberateUser.fromJson(json);
+    notifyListeners();
+  }
+
   clearCurrentUser(){
     currentUser=LiberateUser();
     notifyListeners();
