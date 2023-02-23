@@ -14,6 +14,10 @@ static String passwordTitle= "Contraseña";
 
 static String repeatPasswordTitle= "Repetir contraseña";
 
+static String homeTitle= "Inicio";
+
+static String profileTitle= "Perfil";
+
 
 
 

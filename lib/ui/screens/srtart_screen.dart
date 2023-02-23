@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:liberate/ui/screens/welcome_screen.dart';
 import 'package:provider/provider.dart';
 import '../../../services/auth_service.dart';
+import 'home_screen.dart';
 
 
 class StartScreen extends StatefulWidget {
@@ -24,7 +25,7 @@ class _StartScreenState extends State<StartScreen> {
           return const WelcomeScreen();
         }
         else{
-          return Container(color: Colors.green);
+          return HomeScreen();
         }
       },
     );
