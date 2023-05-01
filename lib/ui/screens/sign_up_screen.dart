@@ -139,7 +139,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                },
                                child: Center(
                                  child: Text(
-                                   Strings.loginText,
+                                   Strings.registerText,
                                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.white),
                                  ),
                                )

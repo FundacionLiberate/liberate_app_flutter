@@ -51,8 +51,15 @@ dependencies:
   #IOS-AppTracking
   app_tracking_transparency: ^2.0.3
 
+  #FIles
+  file_picker: ^5.2.7
+  flutter_downloader: ^1.10.2
+  path_provider: ^2.0.14
 
   cupertino_icons: ^1.0.2
+
+  #URL HANDLER
+  url_launcher: ^6.0.4
 
 dev_dependencies:
   flutter_test:

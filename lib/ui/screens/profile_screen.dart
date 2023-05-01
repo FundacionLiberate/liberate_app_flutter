@@ -59,7 +59,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
-                    child: Text(data.currentUser!.name, style: const TextStyle(color: Colors.grey),textAlign: TextAlign.start),
+                    child: Text(data.currentUser!.nombre, style: const TextStyle(color: Colors.grey),textAlign: TextAlign.start),
                   ),
 
                   const Divider(),

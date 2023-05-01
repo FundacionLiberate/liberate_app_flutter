@@ -12,4 +12,10 @@ class AssetImages{
 
   static String  capacitacionesIconPath = "assets/images/capacitaciones_icon.png";
 
+  static String  programasPath = "assets/images/programas.png";
+
+  static String  historialClinioPath = "assets/images/historial_clinico.png";
+
+  static String  proyectosPath = "assets/images/proyectos.png";
+
 }

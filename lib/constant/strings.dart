@@ -26,7 +26,28 @@ static String boletinesTitle= "Boletines";
 static String revistasTitle= "Revistas";
 static String capacitacionesTitle= "Capacitaciones";
 
+static String programasTitle= "Programas";
+static String proyectosTitle= "Proyectos";
+static String historiasClinicasTitle= "Historias Clínicas";
 
 
+static String chooseFile= "Selecciona un archivo";
+
+static String fileTitle= "Archivo";
+
+
+static String typeTitle= "Tipo";
+
+static String emptyTypeErrorTitle= "Debes primero elegir un tipo";
+
+static String filePickError= "Error al seleccionar el archivo";
+
+static String completeUpload= "Se subió correctamente el archivo";
+
+static String completeDelete= "Se eliminó correctamente";
+
+static String errorTitle= "Hubo un error";
+
+static String completeDownload= "Se descargó correctamente";
 
 }

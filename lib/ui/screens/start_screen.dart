@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:liberate/provider/currentUser_provider.dart';
 import 'package:liberate/ui/screens/welcome_screen.dart';
 import 'package:provider/provider.dart';
 import '../../../services/auth_service.dart';
@@ -30,7 +29,4 @@ class _StartScreenState extends State<StartScreen> {
       },
     );
   }
-
-
-
 }
